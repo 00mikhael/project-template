@@ -1,1 +1,1 @@
-# js-dev-env
+# dev-env-template

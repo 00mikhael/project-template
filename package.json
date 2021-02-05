@@ -8,6 +8,7 @@
     },
     "scripts": {
         "prestart": "babel-node build_scripts/start_message.js",
+        "poststart": "babel-node build_scripts/end_message.js",
         "start": "npm-run-all --parallel open:src",
         "localtunnel": "lt --port 3000 --subdomain project-template",
         "share": "npm-run-all --parallel open:src localtunnel",

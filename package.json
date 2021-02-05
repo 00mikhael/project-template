@@ -1,20 +1,20 @@
 {
-    "name": "template-project",
+    "name": "project-template",
     "version": "1.0.0",
-    "description": "Standard template project",
+    "description": "Standard project template",
     "repository": {
         "type": "git",
-        "url": "https://github.com/kingmikhe/dev-env-template.git"
+        "url": ""
     },
     "scripts": {
         "prestart": "babel-node build_scripts/start_message.js",
         "start": "npm-run-all --parallel open:src",
-        "localtunnel": "lt --port 3000 --subdomain app-template",
+        "localtunnel": "lt --port 3000 --subdomain project-template",
         "share": "npm-run-all --parallel open:src localtunnel",
         "open:src": "babel-node build_scripts/src_server.js"
     },
-    "author": "Michael Nwankwo",
-    "license": "MIT",
+    "author": "",
+    "license": "",
     "dependencies": {
         "whatwg-fetch": "3.5.0"
     },

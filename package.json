@@ -8,20 +8,25 @@
     },
     "scripts": {
         "prestart": "babel-node build_scripts/start_message.js",
-        "start": "npm-run-all --parallel open:src lint:watch",
+        "start": "npm-run-all --parallel open:src lint:watch test:watch",
         "open:src": "babel-node build_scripts/src_server.js",
         "lint": "esw webpack.config.* src build_scripts --color",
-        "lint:watch": "npm run lint -- --watch"
+        "lint:watch": "npm run lint -- --watch",
+        "test": "mocha --reporter spec \"src/**/*.test.js\"",
+        "test:watch": "npm run test -- --watch"
     },
     "author": "",
     "license": "",
     "dependencies": {
+        "@babel/runtime": "^7.12.13",
+        "ignore-styles": "^5.0.1",
         "whatwg-fetch": "3.5.0"
     },
     "devDependencies": {
         "@babel/cli": "7.12.13",
         "@babel/core": "7.12.13",
         "@babel/node": "^7.12.13",
+        "@babel/plugin-transform-runtime": "^7.12.15",
         "@babel/preset-env": "7.12.13",
         "@babel/register": "7.12.13",
         "babel-loader": "8.2.2",
@@ -48,7 +53,6 @@
         "open": "7.4.0",
         "rimraf": "3.0.2",
         "style-loader": "^2.0.0",
-        "surge": "^0.21.7",
         "webpack": "5.20.2",
         "webpack-dev-middleware": "4.1.0",
         "webpack-hot-middleware": "2.25.0",

@@ -1,7 +1,7 @@
 {
     "name": "project-template",
     "version": "1.0.0",
-    "description": "Standard project template",
+    "description": "template set-up for javascript development environment",
     "repository": {
         "type": "git",
         "url": ""
@@ -55,6 +55,7 @@
         "numeral": "2.0.6",
         "open": "7.4.0",
         "rimraf": "3.0.2",
+        "surge": "^0.21.7",
         "style-loader": "^2.0.0",
         "webpack": "5.20.2",
         "webpack-dev-middleware": "4.1.0",

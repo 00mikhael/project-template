@@ -1,9 +1,6 @@
-import numeral from 'numeral';
 import './index.css';
 import { deleteUser, getUsers } from './api/user_api';
 
-const courseValue = numeral(1000).format('$0,0.00');
-console.log(`I would pay ${courseValue} for this awesome template!`); // eslint-disable-line no-console
 document.getElementById('text').textContent = `Table of Users`;
 
 // Populate table of users via API call.
@@ -20,7 +17,6 @@ getUsers().then(result => {
     </tr>`
     });
     global.document.getElementById('users').innerHTML = usersBody;
-
     const deleteLinks = global.document.getElementsByClassName('deleteUser');
 
     // Must use array.from to create a real array from a DOM collection

@@ -7,7 +7,6 @@
         "url": ""
     },
     "scripts": {
-        "prestart": "babel-node build_scripts/start_message.js",
         "start": "npm-run-all --parallel open:src lint:watch test:watch start-mockapi",
         "open:src": "babel-node build_scripts/src_server.js",
         "lint": "esw webpack.config.* src build_scripts --color",
@@ -16,24 +15,24 @@
         "test:watch": "npm run test -- --watch",
         "generate-mock-data": "babel-node build_scripts/generate_mock_data",
         "prestart-mockapi": "npm run generate-mock-data",
-        "start-mockapi": "json-server --watch src/api/db.json --port 3001"
+        "start-mockapi": "json-server --watch src/api/db.json --port 3001",
+        "clean-dist": "rimraf ./dist && mkdir dist",
+        "prebuild": "npm-run-all --parallel clean-dist test lint",
+        "build": "babel-node build_scripts/build.js",
+        "postbuild": "babel-node build_scripts/dist_server.js"
     },
     "author": "",
     "license": "",
     "dependencies": {
-        "@babel/runtime": "^7.12.13",
-        "ignore-styles": "^5.0.1",
         "whatwg-fetch": "3.5.0"
     },
     "devDependencies": {
         "@babel/cli": "7.12.13",
         "@babel/core": "7.12.13",
         "@babel/node": "^7.12.13",
-        "@babel/plugin-transform-runtime": "^7.12.15",
         "@babel/preset-env": "7.12.13",
         "@babel/register": "7.12.13",
         "babel-loader": "8.2.2",
-        "babel-preset-env": "^1.7.0",
         "chai": "4.3.0",
         "chalk": "4.1.0",
         "cheerio": "1.0.0-rc.5",

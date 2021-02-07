@@ -20,7 +20,8 @@
         "prebuild": "npm-run-all --parallel clean-dist test lint",
         "build": "babel-node build_scripts/build.js",
         "postbuild": "babel-node build_scripts/dist_server.js",
-        "deploy": "surge ./dist"
+        "deploy": "surge ./dist",
+        "fnf": "ddd"
     },
     "author": "",
     "license": "",
